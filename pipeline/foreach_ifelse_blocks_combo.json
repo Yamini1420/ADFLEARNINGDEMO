@@ -1,0 +1,82 @@
+{
+	"name": "foreach_ifelse_blocks_combo",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('input array')",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@greater(item(),5)",
+									"type": "Expression"
+								},
+								"ifTrueActivities": [
+									{
+										"name": "Append variable1",
+										"type": "AppendVariable",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "filterarray",
+											"value": {
+												"value": "@item()",
+												"type": "Expression"
+											}
+										}
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"s1": {
+				"type": "Integer",
+				"defaultValue": 0
+			},
+			"input array": {
+				"type": "Array",
+				"defaultValue": [
+					20,
+					30,
+					2
+				]
+			},
+			"s2": {
+				"type": "Integer"
+			},
+			"filterarray": {
+				"type": "Array",
+				"defaultValue": []
+			},
+			"sum1": {
+				"type": "Integer"
+			},
+			"out": {
+				"type": "String"
+			},
+			"out1": {
+				"type": "Integer"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-06-14T05:26:46Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

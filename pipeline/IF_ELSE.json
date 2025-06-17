@@ -1,0 +1,53 @@
+{
+	"name": "IF_ELSE",
+	"properties": {
+		"activities": [
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@greater(variables('inputarray'),10)",
+						"type": "Expression"
+					},
+					"ifTrueActivities": [
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "outputarray",
+								"value": {
+									"value": "@variables('inputarray')",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"inputarray": {
+				"type": "Integer",
+				"defaultValue": 2
+			},
+			"outputarray": {
+				"type": "Integer"
+			},
+			"print": {
+				"type": "Array"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-06-13T11:22:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

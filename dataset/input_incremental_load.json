@@ -1,0 +1,19 @@
+{
+	"name": "input_incremental_load",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage_yamini",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "python/python",
+				"container": "practise"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,74 @@
+{
+	"name": "delete_with_parameter_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Deleteactivity",
+				"type": "Delete",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "Binary1",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": {
+								"value": "@pipeline().parameters.container",
+								"type": "Expression"
+							},
+							"Filename": {
+								"value": "@pipeline().parameters.file",
+								"type": "Expression"
+							},
+							"directoryname": {
+								"value": "@pipeline().parameters.directory",
+								"type": "Expression"
+							}
+						}
+					},
+					"logStorageSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorage_yamini",
+							"type": "LinkedServiceReference"
+						},
+						"path": "practise/out"
+					},
+					"enableLogging": true,
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"recursive": false,
+						"enablePartitionDiscovery": false
+					}
+				}
+			}
+		],
+		"parameters": {
+			"container": {
+				"type": "string"
+			},
+			"directory": {
+				"type": "string"
+			},
+			"file": {
+				"type": "string",
+				"defaultValue": "file1.txt"
+			}
+		},
+		"variables": {
+			"name123455": {
+				"type": "String",
+				"defaultValue": "Pipeline().PipelineRunTime"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-06-12T14:07:14Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

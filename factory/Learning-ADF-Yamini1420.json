@@ -1,0 +1,9 @@
+{
+	"name": "Learning-ADF-Yamini1420",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c8c7a732-54ce-42ee-9b92-9979bf95e0e7",
+		"tenantId": "e0fc05dd-21ed-451e-9d99-d311f8d09924"
+	}
+}

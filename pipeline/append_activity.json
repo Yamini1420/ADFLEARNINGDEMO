@@ -1,0 +1,58 @@
+{
+	"name": "append_activity",
+	"properties": {
+		"activities": [
+			{
+				"name": "Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "value_append",
+					"value": "4"
+				}
+			},
+			{
+				"name": "Set variable2",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Append variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "final_output",
+					"value": {
+						"value": "@variables('value_append')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"value_append": {
+				"type": "Array",
+				"defaultValue": [
+					1,
+					2,
+					3
+				]
+			},
+			"final_output": {
+				"type": "Array",
+				"defaultValue": []
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-06-13T08:39:27Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

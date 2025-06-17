@@ -1,0 +1,28 @@
+{
+	"name": "validation_activity",
+	"properties": {
+		"activities": [
+			{
+				"name": "Validation1",
+				"type": "Validation",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "Binary1",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "practise",
+							"Filename": "fil2.txt",
+							"directoryname": "out"
+						}
+					},
+					"sleep": 2
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-06-14T09:46:17Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
