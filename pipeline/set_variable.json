@@ -14,7 +14,7 @@
 				"typeProperties": {
 					"variableName": "my varible",
 					"value": {
-						"value": "@pipeline().DataFactory",
+						"value": "@pipeline().RunId",
 						"type": "Expression"
 					}
 				}
